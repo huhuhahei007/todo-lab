@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f0">
+  <title>慢慢来 · 待办清单</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="workspace">
+    <header class="topbar"><a class="brand" href="./"><span class="brand-icon">✓</span> 慢慢来<span class="brand-sub"> / 待办清单</span></a><span id="date" class="date"></span></header>
+    <section class="intro"><div class="eyebrow">ONE THING AT A TIME</div><h1>把今天，理清楚。</h1><p>记下要做的事，给每一次完成留一点空间。</p></section>
+    <section class="dashboard" aria-label="任务概况"><div><span class="stat-label">全部任务</span><strong id="total">0</strong></div><div><span class="stat-label">还需完成</span><strong id="pending">0</strong></div><div><span class="stat-label">已经完成</span><strong id="completed">0</strong></div><div class="progress-stat"><span class="stat-label">完成进度 <b id="percent">0%</b></span><div class="progress-track"><div id="progress"></div></div><span class="progress-note" id="progress-note">从一件小事开始</span></div></section>
+    <section class="task-panel" aria-label="待办清单">
+      <form id="add-form"><label class="sr-only" for="task-input">新任务</label><span class="input-icon" aria-hidden="true">＋</span><input id="task-input" maxlength="200" placeholder="有什么想做的？写下来吧…" autocomplete="off" required><button class="add-button" type="submit">添加任务 <span aria-hidden="true">↗</span></button></form>
+      <div class="toolbar"><div class="filters" role="group" aria-label="筛选任务"><button type="button" data-filter="all" aria-pressed="true">全部</button><button type="button" data-filter="active" aria-pressed="false">待完成</button><button type="button" data-filter="done" aria-pressed="false">已完成</button></div><button id="clear" class="clear-button" type="button" disabled>清除已完成</button></div>
+      <ul id="task-list" aria-label="任务"></ul>
+      <div id="empty" class="empty"><div class="empty-icon" aria-hidden="true">☀</div><h2 id="empty-title">给今天一个小目标</h2><p id="empty-description">在上方添加第一件事，一步一步慢慢来。</p></div>
+      <div class="panel-footer"><span id="remaining">0 项待完成</span><span>小步前进，也算前进。</span></div>
+    </section>
+    <footer class="page-footer"><span>你的清单，保存在当前浏览器中</span><span>MADE FOR A CLEARER DAY</span></footer>
+    <p id="notice" class="notice" role="status" aria-live="polite"></p>
+  </main>
+</body>
+</html>
